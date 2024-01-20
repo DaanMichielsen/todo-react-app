@@ -2,6 +2,9 @@
 # todo-react-app
 Repository for storing my progress in a Typescript/React course using TypeORM, Node API and other tools.
 
+## To use this code you will also want to clone the following repo I made during the course
+
+
 https://www.udemy.com/course/typescript-course/
 
 # Getting Started with Create React App
