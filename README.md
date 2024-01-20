@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 # todo-react-app
 Repository for storing my progress in a Typescript/React course using TypeORM, Node API and other tools.
 
 https://www.udemy.com/course/typescript-course/
-=======
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
