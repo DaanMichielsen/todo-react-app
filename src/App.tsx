@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, ReactElement } from 'react';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { customTheme } from './Theme/customTheme';
+import { Dashboard } from './Pages/dashboard/dashboard';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import ComposeContext from './context/Compose.context';
+import { rootContext } from './context/root.context';
 
-function App() {
+// Create query client
+const queryClient = new QueryClient();
+
+const App: FC = (): ReactElement => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <ComposeContext components={rootContext}>
+        <ThemeProvider theme={customTheme}>
+          <CssBaseline>
+            <Dashboard />
+          </CssBaseline>
+        </ThemeProvider>
+      </ComposeContext>
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+    </QueryClientProvider>
   );
-}
+};
 
 export default App;
